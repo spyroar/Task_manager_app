@@ -7,7 +7,12 @@ require("./db/connectDb.js");
 
 const app = express();
 const PORT = process.env.PORT || 8800;
+
+app.get('/', (req, res) => {
+  res.send('Hello from the server');
+});
 app.use(express.json());
+
 app.use(cors());
 app.use(bodyParser.json());
 app.use("/task", router);
